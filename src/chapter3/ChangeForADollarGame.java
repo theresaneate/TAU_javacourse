@@ -9,6 +9,8 @@ If more than, tell them how much over.
 If less than, tell them how much under.
  */
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class ChangeForADollarGame {
@@ -21,7 +23,7 @@ public class ChangeForADollarGame {
         int num20centpieces = 0;
         int num50centpieces = 0;
         int numdollars = 0;
-        boolean onedolla = false;
+        boolean isOneDolla = false;
 
         // get the change input
         Scanner scanner = new Scanner(System.in);
@@ -45,14 +47,12 @@ public class ChangeForADollarGame {
                 + (num50centpieces * 0.50)
                 + (numdollars * 1.00);
         if (totalvalue == 1.00){
-            onedolla = true;
+            isOneDolla = true;
         }
 
         // output the result
 
-        String totalValue = String.format("%.2f", totalvalue);
-
-        if(onedolla == true){
+        if(isOneDolla == true){
             System.out.println("You win!! You have exactly one dollar!!");
         }
         else{
@@ -60,12 +60,16 @@ public class ChangeForADollarGame {
         }
 
         if(totalvalue < 1.00){
-            String difference = String.format(1.00 - totalvalue, 2)
-            System.out.println(() + " under the amount.");
+            String difference = String.format("%.2f", (1.00 - totalvalue));
+            System.out.println((difference + " under the amount."));
         }
         else if(totalvalue > 1.00)
         {
-            System.out.println((totalvalue - 1.00) + " over the amount.");
+            String difference = String.format("%.2f", (totalvalue - 1.00));
+            System.out.println(difference + " over the amount.");
+        }
+        else{
+            System.out.println("There is somethin' funky going on here ... investigate!");
         }
 
     } // end main
