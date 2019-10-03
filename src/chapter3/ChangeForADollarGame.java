@@ -22,7 +22,7 @@ public class ChangeForADollarGame {
         int num10centpieces = 0;
         int num20centpieces = 0;
         int num50centpieces = 0;
-        int numdollars = 0;
+        int numDollars = 0;
         boolean isOneDolla = false;
 
         // get the change input
@@ -37,35 +37,33 @@ public class ChangeForADollarGame {
         System.out.println("number of 50 cent pieces:");
         num50centpieces = scanner.nextInt();
         System.out.println("number of 1 dollar pieces:");
-        numdollars = scanner.nextInt();
+        numDollars = scanner.nextInt();
         scanner.close();
 
+
         // calculate the value
-        double totalvalue = (num5centpieces * 0.05)
+        double totalValue = (num5centpieces * 0.05)
                 + (num10centpieces * 0.20)
                 + (num20centpieces * 0.20)
                 + (num50centpieces * 0.50)
-                + (numdollars * 1.00);
-        if (totalvalue == 1.00){
-            isOneDolla = true;
-        }
+                + (numDollars * 1.00);
+        if (totalValue == 1.00) isOneDolla = true;
+
 
         // output the result
-
-        if(isOneDolla == true){
+        if(isOneDolla){
             System.out.println("You win!! You have exactly one dollar!!");
         }
         else{
-            System.out.print("Your total is $" + totalvalue + " which is $");
+            System.out.print("Your total is $" + totalValue + " which is $");
         }
-
-        if(totalvalue < 1.00){
-            String difference = String.format("%.2f", (1.00 - totalvalue));
+        if(totalValue < 1.00){
+            String difference = String.format("%.2f", (1.00 - totalValue));
             System.out.println((difference + " under the amount."));
         }
-        else if(totalvalue > 1.00)
+        else if(totalValue > 1.00)
         {
-            String difference = String.format("%.2f", (totalvalue - 1.00));
+            String difference = String.format("%.2f", (totalValue - 1.00));
             System.out.println(difference + " over the amount.");
         }
         else{
