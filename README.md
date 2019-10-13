@@ -1,4 +1,4 @@
-Do renew my Java skills, and move on from JDK 6/7/8 to 12 I'm doing this course:
+Do renew my Java skills for an upcoming workshop, and move on from JDK 6/7/8 to 12 I'm doing this course:
 
 # Test Automation University Java course
 
